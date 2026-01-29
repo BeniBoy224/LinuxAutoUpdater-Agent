@@ -1,0 +1,9 @@
+- (INSTALL SCRIPT SHOULD MAKE THIS) If not create a json format of:
+
+/etc/linux-auto-updater/agent-config.json
+
+{
+  "agent_id": "7f9c2e92-9f03-4a30-a5c3-4b9f4b44a1de", - WILL NEED TO CALL API TO GET THIS (on first run)
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." - WILL NEED TO CALL API TO GET THIS (on first run)
+  "controller_url": "192.168.1.2:3001"
+}

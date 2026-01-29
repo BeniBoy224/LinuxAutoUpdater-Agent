@@ -1,3 +1,10 @@
+/*
+ - Log errors
+ - log successfull operations
+ - Return to api in a json format
+*/
+
+
 package logger
 
 import (
