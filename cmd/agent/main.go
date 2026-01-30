@@ -1,6 +1,7 @@
 package main
 
 import (
+	"agent/internal/client"
 	"agent/internal/system"
 	"log/slog"
 	"os"
@@ -60,4 +61,6 @@ func startUp() {
 	system.GetOS()
 
 	config.ConfigStartup()
+
+	client.Client()
 }
