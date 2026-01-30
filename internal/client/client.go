@@ -3,5 +3,12 @@ THIS is the basics of the application (connecting to API, sending logs to server
 
  - Keep up to date with the server
  - Getting the latest packages (new versions and logging that they need updating)
- - 
+ -
 */
+
+package client
+
+func Client() {
+	// Check if config file exists in /etc/linux-auto-updater/agent.json
+
+}

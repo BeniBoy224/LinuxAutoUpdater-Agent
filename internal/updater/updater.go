@@ -10,3 +10,10 @@ Main heart of the process
  - If an error happens during an update STOP and alert the controller
  - If reboot requried let the controller know and see what to do
 */
+
+package config
+
+func config() {
+	// Check if config file exists in /etc/linux-auto-updater/agent.json
+
+}
