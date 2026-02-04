@@ -28,7 +28,7 @@ func Init() {
 	var handler slog.Handler
 
 	if env == "prod" {
-		// ✅ production: rolling log file
+		// production: rolling log file
 		handler = slog.NewJSONHandler(
 			&lumberjack.Logger{
 				Filename:   "logs/linux-autoupdater-agent-" + startTime + ".log",
