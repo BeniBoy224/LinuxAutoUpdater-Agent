@@ -17,11 +17,15 @@ import (
 func Client() {
 	// Check if config file exists in /etc/linux-auto-updater/agent.json
 	resp, err := http.PostForm("http://192.168.1.48:3333/agents/setup",
-		url.Values{"name": {"test"}, "desciption": {"my agent"}, "platform": {"linux"}})
+		url.Values{"desciption": {"my agent"}, "platform": {"linux"}})
 
 	if err != nil {
 		// Handle error
-		slog.Info("Error connecting to server")
+		slog.Error("Error connecting to server")
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		slog.Error("Non-OK HTTP status:", "status", resp.StatusCode, "statusText", resp.Body)
 	}
 
 	defer resp.Body.Close()

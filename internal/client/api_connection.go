@@ -7,8 +7,10 @@ import (
 	"net/http"
 )
 
+const apiURL = "http://192.168.1.48:3333/"
+
 func ApiConnectionGet(endpoint string) (*http.Response, error) {
-	url := "http://192.168.1.48:3333/" + endpoint
+	url := apiURL + endpoint
 
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
@@ -29,11 +31,11 @@ func ApiConnectionGet(endpoint string) (*http.Response, error) {
 }
 
 func ApiConnectionPost(endpoint string, body any) (*http.Response, error) {
-	url := "http://192.168.1.48:3333/" + endpoint
+	url := apiURL + endpoint
 
 	jsonBody, err := json.Marshal(body)
 	if err != nil {
-		slog.Error("Failed to marshal JSON", "error", err)
+		slog.Error("Failed to parse JSON", "error", err)
 		return nil, err
 	}
 
@@ -51,7 +53,7 @@ func ApiConnectionPost(endpoint string, body any) (*http.Response, error) {
 }
 
 func ApiConnectionPatch(endpoint string, body any) (*http.Response, error) {
-	url := "http://192.168.1.48:3333/" + endpoint
+	url := apiURL + endpoint
 
 	jsonBody, err := json.Marshal(body)
 	if err != nil {

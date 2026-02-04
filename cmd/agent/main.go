@@ -1,7 +1,6 @@
 package main
 
 import (
-	"agent/internal/client"
 	"agent/internal/system"
 	"log/slog"
 	"os"
@@ -42,7 +41,7 @@ func Init() {
 			},
 		)
 	} else {
-		// 🧑‍💻 dev: stdout, readable
+		// dev: stdout, readable
 		handler = slog.NewTextHandler(
 			os.Stdout,
 			&slog.HandlerOptions{
@@ -62,5 +61,5 @@ func startUp() {
 
 	config.ConfigStartup()
 
-	client.Client()
+	//client.Client()
 }
